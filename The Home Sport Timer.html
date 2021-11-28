@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--First to set a style for web page for background, text-align, border, and color...-->
+<!--Second to make a title's name and a counter's number.-->
+<!--Third to set up two buttons, and to make sure the id and class to make sure output okay.-->
+<!--Forth to var the counter to be 0 and Interval.-->
+<!--Fifth to set up three function to work with counter and two buttons.-->
+<!--Sixth to make sure the grammer of the setInterval that is swap.-->
+<!--Seven to set up every output in the every function.-->
+
+<html>
+<head>
+    <style>
+        body {
+            background: #0a446f; color: #fff6;
+            font-size: 40px; text-align: center;
+        }
+            h1 {margin: 25vh 0 0 0;font-size: 30vh; }
+
+        button {font-size: 30px; border: 0; background: #0002; color: #fff; padding: 10px 30px; border-radius: 5px;}
+        .hide {display: none}
+    </style>
+</head>
+<body>
+
+<h3> The Home Sport Timer </h3>
+<h1> 0 </h1>
+
+<button type="submit" id="007" class= "love" onclick = "Start()">Start</button>
+<button type="submit" id="888" class="hide" onclick = "Stop()">Stop</button>
+
+<script>
+
+    //To set up a var the counter to be 0 and Interva.
+    let counter = 0,Interval;
+
+    //To set up three functions to work with counter and two buttons.
+    //To set up a output into the every funtion.
+    //To make sure the setInterval's grammer is swap.
+    function count(){
+        counter++;
+        document.querySelector("h1").innerHTML= counter;
+
+    }
+    function Start(){
+        Interval = setInterval(function () {
+            count()
+        }, 1000);
+
+        document.getElementById('007').className = 'hide'
+        document.getElementById('888').className = 'love'
+    }
+
+
+    function Stop(){
+
+        document.getElementById('888').className = 'hide'
+        document.getElementById('007').className = 'love'
+        clearInterval(Interval)
+    }
+
+</script>
+</body>
+</html>
